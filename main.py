@@ -34,4 +34,7 @@ with st.beta_expander("Variables ", expanded=False):
         """
     )
 
-
+df= pd.read_csv('/Admission_Predict_Ver1.1.csv')
+df.head()
+df.shape
+df.describe()
