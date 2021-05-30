@@ -21,13 +21,6 @@ newFeatures = st.beta_container()
 with newFeatures:
     st.header('Parámetros: ')
     st.text('Set de Datos de Kaggle, utilizando el dataset de "Mohan S Acharya, Asfia Armaan, Aneeta S Antony : A Comparison of Regression Models for Prediction of Graduate Admissions, IEEE International Conference on Computational Intelligence in Data Science 2019"')
-    st.markdown('1. Puntuación GRE (max 340)
-2. Puntuación TOEFL (max 120)
-3. Ranking de la universidad (1 a 5)
-4. Carta intención o ensayo (1 a 5)
-5. Fortaleza de la carta de recomendación (1 a 5)
-6. Promedio de la universidad o GPA (escala de 10)
-7. Experiencia en investigación (1 para sí o 0 para no)
-9. Posibilidad de admisión.')
+    st.markdown('Variables')
 
 
