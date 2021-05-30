@@ -14,13 +14,11 @@ with siteHeader:
     st.title('Modelo de Regresión Lineal')
     st.markdown(""" En este proyecto se busca encontrar cuáles son los
     parámetros principales que pueden predecir que una persona sea aceptada en una Ivy League""")
-    st.markdown(""" En este proyecto se busca encontrar cuáles son los
-    parámetros principales que pueden predecir que una persona sea aceptada en una Ivy League""")
-    
+     
 newFeatures = st.beta_container()
 with newFeatures:
     st.header('Parámetros: ')
-    st.text('Set de Datos de Kaggle, utilizando el dataset de "Mohan S Acharya, Asfia Armaan, Aneeta S Antony : A Comparison of Regression Models for Prediction of Graduate Admissions, IEEE International Conference on Computational Intelligence in Data Science 2019"')
+    st.markdown('Set de Datos de Kaggle, utilizando el dataset de "Mohan S Acharya, Asfia Armaan, Aneeta S Antony : A Comparison of Regression Models for Prediction of Graduate Admissions, IEEE International Conference on Computational Intelligence in Data Science 2019"')
     st.markdown('Variables')
 
 
