@@ -35,6 +35,9 @@ with st.beta_expander("Variables ", expanded=False):
     )
 
 df= pd.read_csv('Admission_Predict_Ver1.1.csv')
-df.head(5)
-df.shape
-df.describe()
+st.write(data.sample(5))
+
+
+st.text('Esta es la gráfica de distribución por score del GRE')
+distribution_GRE = pd.DataFrame(df['GRE Score'].value_counts())
+st.bar_chart(distribution_GRE)
