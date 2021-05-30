@@ -42,6 +42,15 @@ st.text('Esta es la gráfica de distribución por score del GRE')
 distribution_GRE = pd.DataFrame(df['GRE Score'].value_counts())
 st.bar_chart(distribution_GRE)
 
+st.text('Aquí podemos ver correlaciones entre las variables')
+corrMatrix = df.corr()
+mask = np.zeros_like(corrMatrix)
+mask[np.triu_indices_from(mask)] = True
+with sns.axes_style ("ticks"):
+  fig,ax = plt.subplots(figsize=(dimensiones))
+  ax= sns.heatmap(corrMatrix, mask=mask, square=True, annot=True, fmt='0.2f', cmap="Purples")
+  st.write(fig)
+
 #Aquí comenzamos con el entrenamiento del modelo. 
 Y= df['Chance of Admit ']
 data_X= pd.DataFrame(df, columns=['GRE Score', 'TOEFL Score', 'University Rating', 'SOP', 'LOR ', 'CGPA', 'Research'])
