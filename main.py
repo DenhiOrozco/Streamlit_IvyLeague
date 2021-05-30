@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn import linear_model
 from sklearn import metrics
@@ -42,10 +41,6 @@ st.write(df.sample(5))
 st.text('Esta es la gráfica de distribución por score del GRE')
 distribution_GRE = pd.DataFrame(df['GRE Score'].value_counts())
 st.bar_chart(distribution_GRE)
-
-#Aquí podemos ver boxplots de Investigación y posibilidades de ser admitidos
-res_graph= sns.boxplot(x=df['Research'], y=df['Chance of Admit '])
-st.write(res_graph)
 
 #Gráfica de distribución de calificaciones de GRE
 st.text('Aquí podemos ver correlaciones entre las variables')
