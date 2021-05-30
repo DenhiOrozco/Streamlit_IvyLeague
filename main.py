@@ -34,7 +34,7 @@ with st.beta_expander("Variables ", expanded=False):
         """
     )
 
-df= pd.read_csv('/blob/main/Admission_Predict_Ver1.1.csv')
+df= pd.read_csv(https://github.com/DenhiOrozco/Streamlit_IvyLeague/blob/main/Admission_Predict_Ver1.1.csv)
 df.head()
 df.shape
 df.describe()
