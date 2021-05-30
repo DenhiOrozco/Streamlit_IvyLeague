@@ -61,5 +61,5 @@ model=lm.fit(x_train, y_train)
 prediciones = lm.predict(x_test)
 st.header('Calificación del modelo')
 st.text('La calificación del modelo es: ')   
-model.score (x_test, y_test)
+st.write(model.score (x_test, y_test))
    
