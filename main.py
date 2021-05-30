@@ -64,5 +64,5 @@ model=lm.fit(x_train, y_train)
 
 prediciones = lm.predict(x_test)
 
-#sns.regplot(y_test, prediciones)
+sns.regplot(y_test, prediciones)
 
