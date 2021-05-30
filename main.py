@@ -44,8 +44,6 @@ st.bar_chart(distribution_GRE)
 
 #Aquí comenzamos con el entrenamiento del modelo. 
 modelTraining= st.beta_container()
-with modelTraining:
- 
 
 Y= df['Chance of Admit ']
 data_X= pd.DataFrame(df, columns=['GRE Score', 'TOEFL Score', 'University Rating', 'SOP',
