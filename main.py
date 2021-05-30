@@ -48,7 +48,7 @@ with modelTraining:
     st.header('Entrenamiento del modelo')
     st.text('En esta sección entrenaremos al modelo')
 
-Y= df['Chance of Admit']
+Y= df['Chance of Admit ']
 data_X= pd.DataFrame(df, columns=['GRE Score', 'TOEFL Score', 'University Rating', 'SOP',
        'LOR ', 'CGPA', 'Research'])
 X= data_X
