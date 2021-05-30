@@ -43,29 +43,23 @@ distribution_GRE = pd.DataFrame(df['GRE Score'].value_counts())
 st.bar_chart(distribution_GRE)
 
 #Aquí comenzamos con el entrenamiento del modelo. 
-modelTraining= st.beta_container()
+st.header('Entrenamiento del modelo')
+st.text('En esta sección entrenaremos al modelo')
+Y= df['Chance of Admit ']
+data_X= pd.DataFrame(df, columns=['GRE Score', 'TOEFL Score', 'University Rating', 'SOP', 'LOR ', 'CGPA', 'Research'])
+X= data_X
 
-with modelTraining:
-    st.header('Entrenamiento del modelo')
-    st.text('En esta sección entrenaremos al modelo')
-    Y= df['Chance of Admit ']
-    data_X= pd.DataFrame(df, columns=['GRE Score', 'TOEFL Score', 'University Rating', 'SOP',
-       'LOR ', 'CGPA', 'Research'])
-    X= data_X
+#Aquí voy a generar x_train, x_test, y_train, y_test utilizando la función train_test_split y asignándole un test_size del 25%
+x_train, x_test, y_train, y_test = train_test_split (X, Y, test_size=0.25)
 
-    #Aquí voy a generar x_train, x_test, y_train, y_test utilizando la función train_test_split y asignándole un test_size del 25%
-    x_train, x_test, y_train, y_test = train_test_split (X, Y, test_size=0.25)
+#Aquí estoy almacenando los parámetro del modelo lineal en la variable lm. 
+lm=linear_model.LinearRegression()
 
-    #Aquí estoy almacenando los parámetro del modelo lineal en la variable lm. 
-    lm=linear_model.LinearRegression()
+# guardo en la variable model el entrenamiento del modelo con las variables "_train"
+model=lm.fit(x_train, y_train)
 
-    # guardo en la variable model el entrenamiento del modelo con las variables "_train"
-    model=lm.fit(x_train, y_train)
-
-    prediciones = lm.predict(x_test)
-
-with newFeatures:
-    st.header('Calificación del modelo')
-    st.text('La calificación del modelo es: ')   
-    model.score (x_test, y_test)
+prediciones = lm.predict(x_test)
+st.header('Calificación del modelo')
+st.text('La calificación del modelo es: ')   
+model.score (x_test, y_test)
    
