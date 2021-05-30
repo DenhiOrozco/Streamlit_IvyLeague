@@ -35,13 +35,19 @@ with st.beta_expander("Variables ", expanded=False):
     )
 
 df= pd.read_csv('Admission_Predict_Ver1.1.csv')
+#Aquí estoy mostrando una muestra de 5 entradas
 st.write(df.sample(5))
 
-
+#Gráfica de distribución de calificaciones de GRE
 st.text('Esta es la gráfica de distribución por score del GRE')
 distribution_GRE = pd.DataFrame(df['GRE Score'].value_counts())
 st.bar_chart(distribution_GRE)
 
+#Aquí podemos ver boxplots de Investigación y posibilidades de ser admitidos
+res_graph= sns.boxplot(x=df['Research'], y=df['Chance of Admit '])
+st.write(res_graph)
+
+#Gráfica de distribución de calificaciones de GRE
 st.text('Aquí podemos ver correlaciones entre las variables')
 dimensiones = (12,10)
 corrMatrix = df.corr()
