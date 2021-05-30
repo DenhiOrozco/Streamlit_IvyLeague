@@ -43,6 +43,7 @@ distribution_GRE = pd.DataFrame(df['GRE Score'].value_counts())
 st.bar_chart(distribution_GRE)
 
 st.text('Aquí podemos ver correlaciones entre las variables')
+dimensiones = (12,10)
 corrMatrix = df.corr()
 mask = np.zeros_like(corrMatrix)
 mask[np.triu_indices_from(mask)] = True
