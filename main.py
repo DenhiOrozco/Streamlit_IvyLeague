@@ -45,8 +45,7 @@ st.bar_chart(distribution_GRE)
 #Aquí comenzamos con el entrenamiento del modelo. 
 modelTraining= st.beta_container()
 with modelTraining:
-    st.header('Entrenamiento del modelo')
-    st.text('En esta sección entrenaremos al modelo')
+ 
 
 Y= df['Chance of Admit ']
 data_X= pd.DataFrame(df, columns=['GRE Score', 'TOEFL Score', 'University Rating', 'SOP',
@@ -64,5 +63,9 @@ model=lm.fit(x_train, y_train)
 
 prediciones = lm.predict(x_test)
 
-sns.regplot(y_test, prediciones)
-
+with newFeatures:
+    st.header('Calificación del modelo')
+    st.text('La calificación del modelo es: ')
+    
+model.score (x_test, y_test)
+   
